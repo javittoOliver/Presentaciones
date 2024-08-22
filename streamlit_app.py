@@ -38,7 +38,7 @@ def llama3(prompt, modelo, temperature:int=0.5):
     messages=[
         {
             "role": "system",
-            "content": "you are a helpful assistant."
+            "content": "Eres un Asistente experto"
         },
         {
             "role": "user",
@@ -52,7 +52,7 @@ def llama3(prompt, modelo, temperature:int=0.5):
         #tools=tools,
         temperature=temperature,
         tool_choice="auto",
-        max_tokens=4096
+        #max_tokens=4096
     )
 
     response_message = response.choices[0].message.content
