@@ -3,6 +3,7 @@ from pptx import Presentation
 from pptx.util import Pt
 from pptx.enum.text import PP_ALIGN
 import re
+from groq import Groq
 
 # Establece la clave API para acceder a la API de Groq desde st.secrets
 api_key = st.secrets["general"]["GROQ_API_KEY"]
@@ -31,8 +32,6 @@ with st.sidebar:
 
 
 def llama3(prompt, modelo):
-    from groq import Groq
-    api_key = api_key
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
