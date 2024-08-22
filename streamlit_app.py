@@ -12,7 +12,7 @@ api_key = st.secrets["general"]["GROQ_API_KEY"]
 st.title("Generador de Presentaciones")
 
 tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt")
-cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["2", "3", "4", "5", "6", "7", "8", "9"])
+cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
 
 extension_input = st.selectbox("Extensión del contenido:", ["Corto", "Medio", "Extenso", "Muy extenso"])
