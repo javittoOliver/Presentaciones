@@ -40,7 +40,7 @@ def get_max_tokens(extension):
     elif extension == "Extenso":
         return 4096
     elif extension == "Muy extenso":
-        return 8196  # Máximo permitido por muchos modelos
+        return 8096  # Máximo permitido por muchos modelos
     else:
         return 4096  # Valor por defecto
 
