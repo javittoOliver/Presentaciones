@@ -16,7 +16,7 @@ cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
 
 extension_input = st.selectbox("Extensión del contenido:", ["Corto", "Medio", "Extenso", "Muy extenso"])
-fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo "publicaciones de organización x"", "Lo que encuentres")
+fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
 
 with st.sidebar:
     st.write("Estás usando  **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
