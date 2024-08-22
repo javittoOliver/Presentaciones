@@ -22,7 +22,7 @@ with st.sidebar:
     st.write("Estás usando  **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
     
     # Permite al usuario subir un archivo txt
-    uploaded_file = st.file_uploader("Sube un txt con info fuente para la ppt", type=["txt"])
+    uploaded_file = st.file_uploader("Si subes un txt la ppt se genera con estos datos", type=["txt"])
 
     # Permite al usuario seleccionar el modelo a utilizar
     modelo = st.selectbox("Modelo", ["llama3-70b-8192", "llama3-8b-8192", "mixtral-8x7b-32768", "gemma-7b-it"])
