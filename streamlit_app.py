@@ -90,7 +90,6 @@ def generar_presentacion():
     cantidad_slides = int(cantidad_slides_input)
     publico_objetivo = publico_objetivo_input
     fuentes = analizar_fuente()
-    extension = extension_input
     update_progress_bar(25)
 
     prompt = f"""Genera amplio contenido en español para una presentación en PowerPoint, 
