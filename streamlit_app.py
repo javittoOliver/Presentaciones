@@ -11,7 +11,7 @@ api_key = st.secrets["general"]["GROQ_API_KEY"]
 # Streamlit UI
 st.title("Generador de Presentaciones")
 
-tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt")
+tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt", "Historia del Arte")
 cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
 
