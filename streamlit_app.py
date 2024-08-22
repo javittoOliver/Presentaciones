@@ -27,24 +27,14 @@ with st.sidebar:
 
     # Permite al usuario seleccionar el modelo a utilizar
     modelo = st.selectbox("Modelo", ["llama3-70b-8192", "mixtral-8x7b-32768"])
-  
+    
+    # Selecciona el número máximo de tokens para la respuesta
+    max_tokens = st.selectbox("Max New Tokens", [1024, 2048, 4096, 8196])  
+    
     # Ajusta la temperatura del modelo para controlar la creatividad
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
-# Mapea las opciones a un rango de tokens
-def get_max_tokens(extension):
-    if extension == "Corto":
-        return 1024
-    elif extension == "Medio":
-        return 2048
-    elif extension == "Extenso":
-        return 4096
-    elif extension == "Muy extenso":
-        return 8096  # Máximo permitido por muchos modelos
-    else:
-        return 4096  # Valor por defecto
-
-def llama3(prompt, modelo, max_tokens, temperature:int=0.5):
+def llama3(prompt, modelo, max_tokens, temperature):
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
@@ -104,7 +94,7 @@ def generar_presentacion():
     fuentes = analizar_fuente()
     extension = extension_input
     # Obtén el número de tokens basado en la selección del usuario
-    max_tokens = get_max_tokens(extension)
+    max_tokens = max_tokens
     update_progress_bar(25)
 
     prompt = f"""Genera {extension} contenido en español para una presentación en PowerPoint, 
