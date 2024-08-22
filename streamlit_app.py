@@ -15,8 +15,9 @@ tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarro
 cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
 
-extension_input = st.selectbox("Extensión del contenido:", ["Corto", "Medio", "Extenso", "Muy extenso"])
+extension_input = st.selectbox("Extensión del contenido:", ["Extenso", "Corto", "Medio", "Muy extenso"])
 fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
+
 
 with st.sidebar:
     st.write("Estás usando  **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
@@ -30,8 +31,20 @@ with st.sidebar:
     # Ajusta la temperatura del modelo para controlar la creatividad
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
+# Mapea las opciones a un rango de tokens
+def get_max_tokens(extension):
+    if extension == "Corto":
+        return 2024
+    elif extension == "Medio":
+        return 2048
+    elif extension == "Extenso":
+        return 4096
+    elif extension == "Muy extenso":
+        return 8196  # Máximo permitido por muchos modelos
+    else:
+        return 4096  # Valor por defecto
 
-def llama3(prompt, modelo, temperature:int=0.5):
+def llama3(prompt, modelo, max_tokens, temperature:int=0.5):
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
@@ -52,7 +65,7 @@ def llama3(prompt, modelo, temperature:int=0.5):
         #tools=tools,
         temperature=temperature,
         tool_choice="auto",
-        #max_tokens=4096
+        max_tokens=max_tokens
     )
 
     response_message = response.choices[0].message.content
@@ -90,6 +103,8 @@ def generar_presentacion():
     publico_objetivo = publico_objetivo_input
     fuentes = analizar_fuente()
     extension = extension_input
+    # Obtén el número de tokens basado en la selección del usuario
+    max_tokens = get_max_tokens(extension_input)
     update_progress_bar(25)
 
     prompt = f"""Genera {extension} contenido en español para una presentación en PowerPoint, 
@@ -115,7 +130,7 @@ def generar_presentacion():
 
     # Generar contenido
     prompt = prompt
-    contenido = llama3(prompt, modelo, temperature)
+    contenido = llama3(prompt, modelo, max_tokens, temperature)
     contenidosa = eliminar_asteriscos(contenido)
     update_progress_bar(50)
 
