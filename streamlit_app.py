@@ -32,7 +32,7 @@ with st.sidebar:
     # Ajusta la temperatura del modelo para controlar la creatividad
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
-def llama3(prompt, modelo, max_tokens:int=8192, temperature):
+def llama3(prompt, modelo, max_tokens:int=8192, temperature:int=0.5):
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
