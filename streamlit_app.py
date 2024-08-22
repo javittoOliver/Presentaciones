@@ -161,7 +161,21 @@ def generar_presentacion():
 
 if st.button("Generar Presentación"):
     progress_bar = st.progress(0)
-    generar_presentacion()
-    st.success("Presentación generada exitosamente. Descárgala desde abajo.")
-    with open("presentacion_generada.pptx", "rb") as file:
-        st.download_button("Descargar Presentación", file, "presentacion_generada.pptx")
+    
+    try:
+        # Llamada a la función para generar la presentación
+        generar_presentacion()
+        
+        # Actualiza la barra de progreso al 100%
+        progress_bar.progress(100)
+        
+        # Mensaje de éxito
+        st.success("Presentación generada exitosamente. Descárgala desde abajo.")
+        
+        # Opción para descargar la presentación
+        with open("presentacion_generada.pptx", "rb") as file:
+            st.download_button("Descargar Presentación", file, "presentacion_generada.pptx")
+    
+    except Exception as e:
+        # Mensaje de error
+        st.error(f"Se produjo un error al generar la presentación: {e}")
