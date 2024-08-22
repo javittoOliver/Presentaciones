@@ -14,7 +14,6 @@ st.title("Generador de Presentaciones")
 tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt", "Historia del Arte")
 cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
-extension_input = st.selectbox("Extensión del contenido:", ["Extenso", "Corto", "Medio", "Muy extenso"])
 fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
 
 
@@ -92,11 +91,9 @@ def generar_presentacion():
     publico_objetivo = publico_objetivo_input
     fuentes = analizar_fuente()
     extension = extension_input
-    # Obtén el número de tokens basado en la selección del usuario
-    max_tokens = st.session_state.get('max_tokens', 1500)  # Valor por defecto si no está definido
     update_progress_bar(25)
 
-    prompt = f"""Genera {extension} contenido en español para una presentación en PowerPoint, 
+    prompt = f"""Genera amplio contenido en español para una presentación en PowerPoint, 
     enumera los slides indicando: Slide1, slide2, etc.
     Indica el Título de cada slide siempre con este formato "Título:".
     Genera títulos pregnantes, impactantes y cortos (menos de 8 palabras).
