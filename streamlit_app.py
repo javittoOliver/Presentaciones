@@ -24,7 +24,7 @@ with st.sidebar:
     uploaded_file = st.file_uploader("Si subes un txt la ppt se genera con estos datos", type=["txt"])
 
     # Permite al usuario seleccionar el modelo a utilizar
-    modelo = st.selectbox("Modelo", ["llama3-70b-8192", "llama-3.1-70b-versatile","mixtral-8x7b-32768"])
+    modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile","llama3-70b-8192","mixtral-8x7b-32768"])
     
     # Selecciona el número máximo de tokens para la respuesta
     max_tokens = st.selectbox("Max New Tokens", [1024, 2048, 4096])  
@@ -32,7 +32,7 @@ with st.sidebar:
     # Ajusta la temperatura del modelo para controlar la creatividad
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
-def llama3(prompt, modelo, max_tokens:int=4096, temperature:int=0.5):
+def llama3(prompt, modelo:str="llama-3.1-70b-versatile", max_tokens:int=4096, temperature:int=0.5):
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
