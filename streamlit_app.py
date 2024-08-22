@@ -128,25 +128,11 @@ def generar_presentacion():
     update_progress_bar(75)
 
     # Agregar cada diapositiva a la presentación
-    # Agregar cada diapositiva a la presentación
+
     for slide_text in slides[1:]:  # El primer elemento de la lista está vacío
-        # Dividir el texto en título y contenido
         titulo = slide_text.split("Título:", 1)
-        
-        if len(titulo) > 1:
-            # Extraer el título y el contenido
-            parts = titulo[1].split("\n", 1)
-            title = parts[0].strip()  # Primer parte es el título
-            
-            # Verificar si hay contenido después del título
-            if len(parts) > 1:
-                content = parts[1].strip()  # Segunda parte es el contenido
-            else:
-                content = ""  # No hay contenido después del título
-        else:
-            title = ""
-            content = ""
-            st.warning("No se encontró la sección 'Título:' en el texto de la diapositiva.")
+        title = titulo[1].split("\n", 1)[0].strip()
+        content = titulo[1].split("\n", 1)[1].strip()
         
         # Agregar una diapositiva
         slide = prs.slides.add_slide(prs.slide_layouts[1])  # Puedes elegir un diseño de diapositiva diferente si lo deseas
