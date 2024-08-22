@@ -128,45 +128,45 @@ def generar_presentacion():
     update_progress_bar(75)
 
     # Agregar cada diapositiva a la presentación
-# Agregar cada diapositiva a la presentación
-for slide_text in slides[1:]:  # El primer elemento de la lista está vacío
-    # Dividir el texto en título y contenido
-    titulo = slide_text.split("Título:", 1)
-    
-    if len(titulo) > 1:
-        # Extraer el título y el contenido
-        parts = titulo[1].split("\n", 1)
-        title = parts[0].strip()  # Primer parte es el título
+    # Agregar cada diapositiva a la presentación
+    for slide_text in slides[1:]:  # El primer elemento de la lista está vacío
+        # Dividir el texto en título y contenido
+        titulo = slide_text.split("Título:", 1)
         
-        # Verificar si hay contenido después del título
-        if len(parts) > 1:
-            content = parts[1].strip()  # Segunda parte es el contenido
+        if len(titulo) > 1:
+            # Extraer el título y el contenido
+            parts = titulo[1].split("\n", 1)
+            title = parts[0].strip()  # Primer parte es el título
+            
+            # Verificar si hay contenido después del título
+            if len(parts) > 1:
+                content = parts[1].strip()  # Segunda parte es el contenido
+            else:
+                content = ""  # No hay contenido después del título
         else:
-            content = ""  # No hay contenido después del título
-    else:
-        title = ""
-        content = ""
-        st.warning("No se encontró la sección 'Título:' en el texto de la diapositiva.")
+            title = ""
+            content = ""
+            st.warning("No se encontró la sección 'Título:' en el texto de la diapositiva.")
+        
+        # Agregar una diapositiva
+        slide = prs.slides.add_slide(prs.slide_layouts[1])  # Puedes elegir un diseño de diapositiva diferente si lo deseas
     
-    # Agregar una diapositiva
-    slide = prs.slides.add_slide(prs.slide_layouts[1])  # Puedes elegir un diseño de diapositiva diferente si lo deseas
-
-    # Configurar el título
-    title_shape = slide.shapes.title
-    title_shape.text = title
-    title_shape.text_frame.paragraphs[0].font.name = 'Poppins'
-    title_shape.text_frame.paragraphs[0].font.size = Pt(28)
-    title_shape.text_frame.paragraphs[0].font.bold = True
-    title_shape.text_frame.paragraphs[0].alignment = PP_ALIGN.LEFT
-
-    # Configurar el contenido
-    content_shape = slide.placeholders[1]
-    content_shape.text = content
-
-    # Reducir el tamaño de la fuente del contenido
-    for paragraph in content_shape.text_frame.paragraphs:
-        for run in paragraph.runs:
-            run.font.size = Pt(14)
+        # Configurar el título
+        title_shape = slide.shapes.title
+        title_shape.text = title
+        title_shape.text_frame.paragraphs[0].font.name = 'Poppins'
+        title_shape.text_frame.paragraphs[0].font.size = Pt(28)
+        title_shape.text_frame.paragraphs[0].font.bold = True
+        title_shape.text_frame.paragraphs[0].alignment = PP_ALIGN.LEFT
+    
+        # Configurar el contenido
+        content_shape = slide.placeholders[1]
+        content_shape.text = content
+    
+        # Reducir el tamaño de la fuente del contenido
+        for paragraph in content_shape.text_frame.paragraphs:
+            for run in paragraph.runs:
+                run.font.size = Pt(14)
 
     # Guardar la presentación
     prs.save('presentacion_generada.pptx')
