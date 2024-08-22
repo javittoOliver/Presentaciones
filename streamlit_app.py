@@ -31,7 +31,7 @@ with st.sidebar:
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
 
-def llama3(prompt, modelo,  temperature = int=0.5):
+def llama3(prompt, modelo, temperature:int=0.5):
     client = Groq(api_key = api_key)
     MODEL = modelo
     # Step 1: send the conversation and available functions to the model
