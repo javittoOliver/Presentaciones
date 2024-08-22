@@ -34,7 +34,7 @@ with st.sidebar:
 # Mapea las opciones a un rango de tokens
 def get_max_tokens(extension):
     if extension == "Corto":
-        return 2024
+        return 1024
     elif extension == "Medio":
         return 2048
     elif extension == "Extenso":
@@ -104,7 +104,7 @@ def generar_presentacion():
     fuentes = analizar_fuente()
     extension = extension_input
     # Obtén el número de tokens basado en la selección del usuario
-    max_tokens = get_max_tokens(extension_input)
+    max_tokens = get_max_tokens(extension)
     update_progress_bar(25)
 
     prompt = f"""Genera {extension} contenido en español para una presentación en PowerPoint, 
