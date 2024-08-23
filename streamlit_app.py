@@ -13,6 +13,7 @@ st.markdown("""
 .title {
     font-size: 3rem;
     color: #5F9EA0;
+    font-weight: bold;
 }
 </style>
 """, unsafe_allow_html=True)
