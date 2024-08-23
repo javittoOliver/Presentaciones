@@ -11,8 +11,8 @@ api_key = st.secrets["general"]["GROQ_API_KEY"]
 st.markdown("""
 <style>
 .title {
-    font-size: 2rem;
-    color: #333;
+    font-size: 6rem;
+    color: #5F9EA0;
 }
 </style>
 """, unsafe_allow_html=True)
