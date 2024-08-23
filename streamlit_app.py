@@ -89,7 +89,7 @@ def generar_presentacion():
     fuentes = analizar_fuente()
     update_progress_bar(25)
 
-    prompt = f"""Genera amplio contenido en español para una presentación en PowerPoint, 
+    prompt = f"""Genera mucho contenido en español para cada hoja de una presentación en PowerPoint, 
     enumera los slides indicando: Slide1, slide2, etc.
     Indica el Título de cada slide siempre con este formato "Título:".
     Genera títulos pregnantes, impactantes y cortos (menos de 8 palabras).
@@ -99,7 +99,7 @@ def generar_presentacion():
     puedes citar frases importantes, generar analogías, evidenciar con casos de éxito si el tema lo amerita.
     Desarrolla sobre todo lo que expongas, no des solo títulos u ítems.
     Otorga dinamismo la estructura del texto, usa adecuadamente tabulaciones y elementos para jerarquizar lo
-    más importante y para que la lectura no se torne monótona, pero no exageres, no en todos los slides.
+    más importante y para que la lectura no se torne monótona, que no se vean similares todos los slides.
     No repitas información, no es necesario que en todos los slides haya evidencia científica por ejemplo.
     Coloca al final de cada slide un salto de línea e "Imagen:" y un texto corto indicando qué tipo de imagen 
     puedo usar en el slide, para usar el texto en el buscador de mi navegador de internet.
