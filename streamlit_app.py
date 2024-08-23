@@ -25,21 +25,6 @@ publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigi
 fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
 
 
-# Estilo para el contenido principal
-st.markdown("""
-<style>
-.sidebar .sidebar-content {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    color: #ff5733;
-    background-color: #f0f8ff;  /* Cambia el color de fondo */
-    padding: 10px;
-}
-.sidebar .sidebar-content .css-1q6bmo2 {
-    background-color: #2F4F4F;  /* Cambia el color de fondo para la barra lateral */
-}
-</style>
-""", unsafe_allow_html=True)
-
 # Barra lateral
 with st.sidebar:
     st.write("Estás usando **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
