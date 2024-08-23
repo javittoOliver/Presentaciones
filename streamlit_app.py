@@ -1,6 +1,6 @@
 import streamlit as st
 from pptx import Presentation
-from pptx.util import Pt
+from pptx.util import Pt, Inches
 from pptx.enum.text import PP_ALIGN
 import re
 from groq import Groq
