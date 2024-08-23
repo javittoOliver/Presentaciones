@@ -188,4 +188,4 @@ if st.button("Generar Presentación"):
     
     except Exception as e:
         # Mensaje de error
-        st.error(f"Se produjo un error al generar la presentación: {e}<br>Intenta de nuevo o selecciona un modelo diferente.", unsafe_allow_html=True)
+        st.error(f"Se produjo un error al generar la presentación: {e}n\Intenta de nuevo o selecciona un modelo diferente.")
