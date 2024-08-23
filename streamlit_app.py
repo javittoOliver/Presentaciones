@@ -18,19 +18,26 @@ fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de prefe
 
 
 with st.sidebar:
+    st.markdown("""
+    <style>
+    .sidebar .sidebar-content {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        color: #ff5733;
+        background-color: #f0f8ff;
+        padding: 10px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
     st.write("Estás usando  **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
     
-    # Permite al usuario subir un archivo txt
     uploaded_file = st.file_uploader("Si subes un txt la ppt se genera con estos datos", type=["txt"])
 
-    # Permite al usuario seleccionar el modelo a utilizar
     modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile","llama3-70b-8192","mixtral-8x7b-32768"])
-    
-    # Selecciona el número máximo de tokens para la respuesta
+
     max_tokens = st.selectbox("Max New Tokens", [4096,2048,1024])  
-    
-    # Ajusta la temperatura del modelo para controlar la creatividad
+
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
+
 
 def llama3(prompt, modelo:str="llama-3.1-70b-versatile", max_tokens:int=4096, temperature:int=0.5):
     client = Groq(api_key = api_key)
