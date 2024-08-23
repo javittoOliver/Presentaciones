@@ -62,7 +62,9 @@ def analizar_fuente():
     if uploaded_file is not None:
         # Leer el contenido del archivo .txt
         fuente = uploaded_file.read().decode("utf-8")
-        st.write(f"La fuente cargada es: {fuente}")
+        nombre_archivo = uploaded_file.name
+        st.write(f"La fuente cargada es: {nombre_archivo}")
+        #st.write(f"La fuente cargada es: {fuente}")
     else:
         fuente = fuente_input
     
