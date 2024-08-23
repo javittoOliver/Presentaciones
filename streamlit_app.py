@@ -25,24 +25,30 @@ publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigi
 fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
 
 
+# Estilo para el contenido principal
+st.markdown("""
+<style>
+.sidebar .sidebar-content {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff5733;
+    background-color: #f0f8ff;  /* Cambia el color de fondo */
+    padding: 10px;
+}
+.sidebar .sidebar-content .css-1q6bmo2 {
+    background-color: #f0f8ff;  /* Cambia el color de fondo para la barra lateral */
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Barra lateral
 with st.sidebar:
-    st.markdown("""
-    <style>
-    .sidebar .sidebar-content {
-        font-family: 'Comic Sans MS', cursive, sans-serif;
-        color: #ff5733;
-        background-color: #f0f8ff;
-        padding: 10px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    st.write("Estás usando  **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
+    st.write("Estás usando **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
     
     uploaded_file = st.file_uploader("Si subes un txt la ppt se genera con estos datos", type=["txt"])
 
-    modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile","llama3-70b-8192","mixtral-8x7b-32768"])
+    modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile", "llama3-70b-8192", "mixtral-8x7b-32768"])
 
-    max_tokens = st.selectbox("Max New Tokens", [4096,2048,1024])  
+    max_tokens = st.selectbox("Max New Tokens", [4096, 2048, 1024])  
 
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
