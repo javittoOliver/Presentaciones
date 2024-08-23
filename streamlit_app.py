@@ -130,6 +130,10 @@ def generar_presentacion():
 
     # Crear una presentación PowerPoint
     prs = Presentation()
+    
+    # Configurar el tamaño de la diapositiva a 16:9 (25.4 cm x 14.29 cm)
+    prs.slide_width = Inches(13.33)  # 25.4 cm
+    prs.slide_height = Inches(7.5)   # 14.29 cm
 
     update_progress_bar(75)
 
