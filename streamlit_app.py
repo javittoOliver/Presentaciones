@@ -8,9 +8,16 @@ from groq import Groq
 # Establece la clave API para acceder a la API de Groq desde st.secrets
 api_key = st.secrets["general"]["GROQ_API_KEY"]
 
-# Streamlit UI
-st.title("Generador de Presentaciones")
+st.markdown("""
+<style>
+.title {
+    font-size: 2rem;
+    color: #333;
+}
+</style>
+""", unsafe_allow_html=True)
 
+st.markdown('<p class="title">Generador de Presentaciones</p>', unsafe_allow_html=True)
 tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt", "Historia del Arte")
 cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
