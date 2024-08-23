@@ -35,7 +35,7 @@ st.markdown("""
     padding: 10px;
 }
 .sidebar .sidebar-content .css-1q6bmo2 {
-    background-color: #f0f8ff;  /* Cambia el color de fondo para la barra lateral */
+    background-color: #2F4F4F;  /* Cambia el color de fondo para la barra lateral */
 }
 </style>
 """, unsafe_allow_html=True)
