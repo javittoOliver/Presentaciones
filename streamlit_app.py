@@ -93,10 +93,10 @@ def generar_presentacion():
 
     prompt = f""" 
     Genera mucho contenido en español-argentina para una presentación en PowerPoint (aproximadamente 300 palabras por slide).
-     *La estructura narrativa debe estar basada en: Introducción o planteamiento, Desarrollo o nudo, Clímax y Desenlace. 
      *Enumera los slides como Slide 1, Slide 2, Slide 3, etc.
      *Indica el título de cada slide con el formato "Título:", sin comillas.
      *Crea títulos breves, impactantes y claros (menos de 8 palabras).
+     *La estructura narrativa debe estar basada en: Introducción o planteamiento, Desarrollo o nudo, Clímax y Desenlace. 
      *La introducción debe ser motivadora y mencionar: "A continuación expongo hallazgos en la voz de nuestros colaboradores de la 
       última semana". Y luego un breve resumen de lo que se expondrá en toda la presentación, con algún gatillo al desarrollo y 
       Climax, que generen espectativas, ganas de continuar leyendo. (Usa tres Bloques de texto con saltos de linea entre ellos)
