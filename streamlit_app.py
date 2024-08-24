@@ -91,25 +91,28 @@ def generar_presentacion():
     fuentes = analizar_fuente()
     update_progress_bar(25)
 
-    prompt = f"""Genera mucho contenido en español para cada hoja de una presentación en PowerPoint, 
-    enumera los slides indicando: Slide1, slide2, etc.
-    Indica el Título de cada slide siempre con este formato "Título:".
-    Genera títulos pregnantes, impactantes y cortos (menos de 8 palabras).
-    No coloque los títulos entre comillas "".
-    Comienza con una introducción general motivadora y persuasiva.
-    Usa información de las fuentes recomendadas y las que consideres fiables para enriquecer el contenido, 
-    puedes citar frases importantes, generar analogías, evidenciar con casos de éxito si el tema lo amerita.
-    Desarrolla sobre todo lo que expongas, no des solo títulos u ítems.
-    Otorga dinamismo la estructura del texto, usa adecuadamente tabulaciones y elementos para jerarquizar lo
-    más importante y para que la lectura no se torne monótona, que no se vean similares todos los slides.
-    No repitas información, no es necesario que en todos los slides haya evidencia científica por ejemplo.
-    Coloca al final de cada slide un salto de línea e "Imagen:" y un texto corto indicando qué tipo de imagen 
-    puedo usar en el slide, para usar el texto en el buscador de mi navegador de internet.
-    
-    Sigue estas instrucciones detalladas: {tema}
-    Público objetivo: {publico_objetivo}
-    Slides: {cantidad_slides}
-    Fuentes: {fuentes}
+    prompt = f""" 
+    Genera mucho contenido en español-argentina para una presentación en PowerPoint (aproximadamente 300 palabras por slide).
+     *La estructura narrativa debe estar basada en: Introducción o planteamiento, Desarrollo o nudo, Clímax y Desenlace. 
+     *Enumera los slides como Slide 1, Slide 2, Slide 3, etc.
+     *Indica el título de cada slide con el formato "Título:", sin comillas.
+     *Crea títulos breves, impactantes y claros (menos de 8 palabras).
+     *La introducción debe ser motivadora y mencionar: "A continuación expongo hallazgos en la voz de nuestros colaboradores de la 
+      última semana". Y luego un breve resumen de lo que se expondrá en toda la presentación, con algún gatillo al desarrollo y 
+      Climax, que generen espectativas, ganas de continuar leyendo. (Usa tres Bloques de texto con saltos de linea entre ellos)
+     *Cada Slide debe tener un párrafo de introducción a la información que presentes, relacionado con el título y los datos del slide.
+     *Evita referenciar mis peticiones literales de "Introducción:", "Desarrollo:", "Desenlace:", "Clímax:", "Clímax y Desenlaze:", "Resumen:", "Introduccion Motivadora:".
+     *Otorga dinamismo a la estructura del texto, el parrafo introductorio en un bloque por ejemplo, y si listas datos 
+      que tengan una sangria más pronunciada usando viñetas eventualmente. Se creativa!
+     *No abuses de un recurso, si usas análisis estadísticos por ejemplo, porcentajes, sumas, promedios, tendencias. No lo hagas en más
+      de dos slides de la misma forma. 
+     *En el ultimo slide -el que expones las conclusiones- anexa al contenido alguna frase reconocida que tenga relación analógica o metafórica con el informe, cita su autor.  
+
+    Detalles de la solicitud
+     *Tema: {tema}
+     *Cantidad de Slides: {cantidad_slides}
+     *Público objetivo: {publico_objetivo}
+     *Fuentes: {fuentes}
     """
 
     # Generar contenido
