@@ -96,7 +96,8 @@ def generar_presentacion():
     Indica el Título de cada slide siempre con este formato "Título:".
     Genera títulos pregnantes, impactantes y cortos (menos de 8 palabras).
     No coloque los títulos entre comillas "".
-    Comienza con una introducción general motivadora y persuasiva.
+    Comienza con una introducción general motivadora y un resumen persuasivo de toda la presentacón, dos o
+    tres bloques de texto con saltos de línae.
     Usa información de las fuentes recomendadas y las que consideres precisas para enriquecer el contenido, 
     puedes citar frases importantes, generar analogías, evidenciar con casos de éxito si el tema lo amerita.
     Desarrolla sobre todo lo que expongas, no des solo títulos u ítems.
