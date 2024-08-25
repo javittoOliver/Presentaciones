@@ -13,7 +13,7 @@ st.title("Generador de Presentaciones")
 tema_input = st.text_input("Tema: Introduce el tema sobre el que quieres desarrollar la ppt", "Historia del Arte")
 cantidad_slides_input = st.selectbox("Cantidad de Slides: Selecciona la cantidad de Hojas que quieres que tenga la ppt", ["5", "2", "3", "4", "6", "7", "8", "9"])
 publico_objetivo_input = st.text_input("Público Objetivo: ¿A quien irá dirigida?", "Público en General")
-fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de organización x", "Lo que encuentres")
+fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de preferencia, por ejemplo: publicaciones de...", "Autor: E.H. Gombrich")
 
 
 # Barra lateral
