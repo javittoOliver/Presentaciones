@@ -24,7 +24,7 @@ with st.sidebar:
 
     modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile", "llama3-70b-8192", "mixtral-8x7b-32768"])
 
-    max_tokens = st.selectbox("Max New Tokens", [4096, 2048, 1024])  
+    max_tokens = st.selectbox("Tokens de salida", [4096, 2048, 1024])  
 
     temperature = st.slider("Temperatura", 0.0, 1.0, 0.5, 0.2)
 
