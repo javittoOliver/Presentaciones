@@ -20,7 +20,7 @@ fuente_input = st.text_input("Fuentes de preferencia: Ingresa la fuente de prefe
 with st.sidebar:
     st.write("Estás usando **Streamlit💻** and **Groq🖥**\n from Vitto ✳️")
     
-    uploaded_file = st.file_uploader("Si subes un txt la ppt se genera con estos datos", type=["txt"])
+    uploaded_file = st.file_uploader("Sube un txt y la ppt se genera en base al contenido", type=["txt"])
 
     modelo = st.selectbox("Modelo", ["llama-3.1-70b-versatile", "llama3-70b-8192", "mixtral-8x7b-32768"])
 
